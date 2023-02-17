@@ -1,0 +1,269 @@
+{new
+   StoreLitePanel
+   store_panel
+   (file
+      "store.milo")
+   (filters store_song_filter store_avatar_filter)
+   (sorts store_sort_alpha store_sort_date store_sort_cost)
+   (enter
+      {gamertag.lbl
+         set_user_name
+         {user_mgr get_active_user}})}
+{new
+   StoreEnumPanel
+   store_enum_panel
+   (show_back_button
+      {store_enum_panel allow_cancel})
+   (file
+      "store_enum.milo")
+   (SELECT_MSG
+      {if
+         {== $component back.btn}
+         {$this cancel}})
+   (BUTTON_DOWN_MSG
+      {if
+         {&&
+            {$this allow_cancel}
+            {shell_input in_controller_mode}
+            {== $action kAction_Cancel}}
+         {$this cancel}}
+      kDataUnhandled)
+   (cancel
+      {if_else
+         {==
+            {ui current_screen}
+            store_renum_screen}
+         {ui pop_screen main_screen}
+         {ui go_back_screen main_screen}})}
+{new
+   HamScreen
+   store_enum_screen
+   (panels meta background_panel dialog_panel store_enum_panel)
+   (focus store_enum_panel)
+   (enter
+      {dialog_panel set_msg store_enumeration})
+   (enum_complete
+      {if_else
+         {store_enum_panel succeeded}
+         {do
+            {store_panel set_products store_enum_panel}
+            {ui goto_screen store_filter_screen}}
+         {ui goto_screen store_enum_error_screen}})}
+{new
+   HamScreen
+   store_renum_screen
+   (panels dialog_panel store_enum_panel)
+   (focus store_enum_panel)
+   (enter
+      {dialog_panel set_msg store_renumeration})
+   (enum_complete
+      {if_else
+         {store_enum_panel succeeded}
+         {do
+            {store_panel update_purchased store_enum_panel}
+            {store_product_panel refresh}
+            {ui pop_screen}}
+         {ui pop_screen store_enum_error_screen}})}
+{new
+   HamScreen
+   store_enum_error_screen
+   (panels meta background_panel)
+   (enter
+      {ui goto_screen store_enum_error_dialog_screen})}
+{new
+   HamScreen
+   store_enum_error_dialog_screen
+   (panels meta background_panel dialog_panel)
+   (focus dialog_panel)
+   (enter
+      {dialog_panel
+         set_ok
+         {store_enum_panel enum_error_token}})
+   (SELECT_MSG
+      {ui goto_screen main_screen})}
+{new
+   HamScreen
+   store_disconnected_error_screen
+   (panels meta background_panel dialog_panel)
+   (focus dialog_panel)
+   (enter
+      {dialog_panel set_ok store_enumeration_error_failed})
+   (SELECT_MSG
+      {ui goto_screen main_screen})}
+{new
+   HamPanel
+   store_filter_panel
+   (focus button_01.btn)
+   (show_back_button TRUE)
+   (file
+      "store_filter.milo")
+   (enter
+      {if_else
+         {==
+            {store_panel filter_name}
+            store_song_filter}
+         {$this set_focus button_01.btn}
+         {$this set_focus button_02.btn}})
+   (SELECT_MSG
+      {if_else
+         {== $component back.btn}
+         {ui go_back_screen main_screen}
+         {do
+            {store_panel
+               set_filter
+               {$component get text_token}}
+            {if_else
+               {store_panel has_products}
+               {ui goto_screen store_product_screen}
+               {do
+                  {shell_input skip_current_select_anim}
+                  {ui push_screen store_no_products_screen}}}}})}
+{new
+   HamScreen
+   store_filter_screen
+   (panels meta background_panel store_panel store_filter_panel)
+   (focus store_filter_panel)
+   (back main_screen)}
+{new
+   HamScreen
+   store_no_products_screen
+   (panels dialog_panel)
+   (focus dialog_panel)
+   (enter
+      {dialog_panel
+         set_ok
+         (store_no_products_for_filter
+            {store_panel filter_name})})
+   (SELECT_MSG
+      {ui pop_screen})}
+{new
+   HamPanel
+   store_product_panel
+   (focus song_button_01.sbt)
+   (show_back_button TRUE)
+   (file
+      "store_product.milo")
+   (tertiary_token
+      {store_panel sort_name})
+   (enter
+      {filter.lbl
+         set
+         text_token
+         {store_panel filter_name}}
+      {right_hand.hbs
+         set_provider
+         {store_panel product_provider}}
+      {store_panel update_sell_text sell_text.lbl 0}
+      {platform_mgr
+         add_sink
+         $this
+         (ui_changed)}
+      {shell_input set_focus_if_controller_mode song_button_01.sbt})
+   (exit
+      {platform_mgr remove_sink $this ui_changed})
+   (SELECT_MSG
+      {switch
+         $component
+         (song_button_01.sbt
+            {$this checkout $component})
+         (song_button_02.sbt
+            {$this checkout $component})
+         (song_button_03.sbt
+            {$this checkout $component})
+         (song_button_04.sbt
+            {$this checkout $component})
+         (back.btn
+            {ui go_back_screen store_filter_screen})
+         (tertiary.btn
+            {store_panel toggle_sort}
+            {right_hand.hbs update_list}
+            {do
+               ($focus
+                  {if_else
+                     {shell_input in_controller_mode}
+                     {$this focus_name}
+                     {right_hand.hbs focus_button}})
+               {if
+                  {'||'
+                     {== $focus song_button_01.sbt}
+                     {== $focus song_button_02.sbt}
+                     {== $focus song_button_03.sbt}
+                     {== $focus song_button_04.sbt}}
+                  {$this product_highlighted $focus}}}
+            {set
+               [tertiary_token]
+               {store_panel sort_name}}
+            {helpbar update_tertiary_button $this})})
+   (checkout
+      ($component)
+      {if_else
+         {platform_mgr
+            is_user_signed_into_live
+            {user_mgr get_active_user}}
+         {do
+            {shell_input skip_current_select_anim}
+            {store_panel
+               checkout
+               {right_hand.hbs list_index_for_button $component}}}
+         {ui goto_screen store_disconnected_error_screen}})
+   (BUTTON_DOWN_MSG
+      {if
+         {&&
+            {==
+               {{$this loaded_dir}
+                  get
+                  focus_component}
+               song_button_01.sbt}
+            {== $action kAction_Up}}
+         {right_hand.hbs scroll_up}}
+      {if
+         {&&
+            {==
+               {{$this loaded_dir}
+                  get
+                  focus_component}
+               song_button_04.sbt}
+            {== $action kAction_Down}}
+         {right_hand.hbs scroll_down}}
+      kDataUnhandled)
+   (FOCUS_MSG
+      {$this highlight_changed $new_focus})
+   (HIGHLIGHT_CHANGED_MSG
+      {switch
+         $component
+         (song_button_01.sbt
+            {$this product_highlighted $component})
+         (song_button_02.sbt
+            {$this product_highlighted $component})
+         (song_button_03.sbt
+            {$this product_highlighted $component})
+         (song_button_04.sbt
+            {$this product_highlighted $component})
+         (song_button_up.sbt
+            {$this product_highlighted $component})
+         (song_button_down.sbt
+            {$this product_highlighted $component})})
+   (product_highlighted
+      ($component)
+      {store_panel
+         update_sell_text
+         sell_text.lbl
+         {right_hand.hbs list_index_for_button $component}})
+   (UI_CHANGED_MSG
+      {if
+         {&&
+            {! $showing}
+            {store_panel needs_refresh}
+            {==
+               {ui current_screen}
+               store_product_screen}}
+         {store_panel limit_enum_to_active_filter}
+         {ui push_screen store_renum_screen}})
+   (refresh
+      {right_hand.hbs update_list})}
+{new
+   HamScreen
+   store_product_screen
+   (panels meta background_panel store_panel store_product_panel)
+   (focus store_product_panel)
+   (back store_filter_screen)}

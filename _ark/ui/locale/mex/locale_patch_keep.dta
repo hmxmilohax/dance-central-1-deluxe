@@ -1,0 +1,28 @@
+(photo_warning
+   "Las fotos se eliminan tras cada canción.")
+(store_title
+   "Tienda Dance Central")
+(store_song_filter
+   "Bailes")
+(store_avatar_filter
+   "Artículos de avatar")
+(store_no_products_for_filter
+   "No hay %s disponibles ahora.")
+(store_sort_alpha
+   "Orden: Nombre")
+(store_sort_date
+   "Orden: Fecha")
+(store_sort_cost
+   "Orden: Costo")
+(store_purchased
+   "Comprado")
+(store_enumeration
+   "Buscando el contenido de la Tienda Dance Central. Espere...")
+(store_renumeration
+   "Actualizando el contenido de la Tienda Dance Central. Espere...")
+(store_enumeration_error_failed
+   "Se ha perdido la conexión con Xbox LIVE. No podrás entrar en la Tienda Dance Central hasta que te conectes a Xbox LIVE e inicies sesión.")
+(store_enumeration_error_no_products
+   "No se encontraron datos de la Tienda Dance Central. Quizá la configuración familiar evitó que este perfil de jugador descargara contenido.")
+(store_points
+   "Todos los precios están en Microsoft® Points")

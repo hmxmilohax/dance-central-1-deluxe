@@ -1,0 +1,28 @@
+(photo_warning
+   "Les photos sont supprimées après chaque chanson.")
+(store_title
+   "Boutique Dance Central")
+(store_song_filter
+   "Danses")
+(store_avatar_filter
+   "Éléments pour avatar")
+(store_no_products_for_filter
+   "%s : actuellement indisponible.")
+(store_sort_alpha
+   "Trier par : nom")
+(store_sort_date
+   "Trier par : date")
+(store_sort_cost
+   "Trier par : prix")
+(store_purchased
+   "Acheté")
+(store_enumeration
+   "Chargement du contenu de la boutique Dance Central, merci de patienter...")
+(store_renumeration
+   "Actualisation du contenu de la boutique Dance Central, merci de patienter...")
+(store_enumeration_error_failed
+   "Connexion à Xbox LIVE perdue. Impossible d'accéder à la boutique Dance Central tant que la connexion à Xbox LIVE n'est pas rétablie.")
+(store_enumeration_error_no_products
+   "Aucune donnée Dance Central trouvée. Les paramètres de contrôle parental doivent empêcher ce profil du joueur de télécharger du contenu téléchargeable.")
+(store_points
+   "Tous les prix affichés sont en Microsoft® Points")

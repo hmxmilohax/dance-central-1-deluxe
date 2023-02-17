@@ -1,0 +1,28 @@
+(photo_warning
+   "Fotos werden nach jedem Song gelöscht.")
+(store_title
+   "\qDance Central\q-Ladens")
+(store_song_filter
+   "Tänze")
+(store_avatar_filter
+   "Avatar-Gegenstände")
+(store_no_products_for_filter
+   "%s derzeit nicht verfügbar")
+(store_sort_alpha
+   "Sort. n. Name")
+(store_sort_date
+   "Sort. n. Datum")
+(store_sort_cost
+   "Sort. n. Preis")
+(store_purchased
+   "Gekauft")
+(store_enumeration
+   "Inhalt des \qDance Central\q-Ladens wird gesucht, bitte warten ...")
+(store_renumeration
+   "Inhalt des \qDance Central\q-Ladens wird aktualisiert, bitte warten ...")
+(store_enumeration_error_failed
+   "Die Verbindung zu Xbox LIVE wurde unterbrochen. Du musst mit Xbox LIVE verbunden und angemeldet sein, um auf den \qDance Central\q-Laden zuzugreifen.")
+(store_enumeration_error_no_products
+   "Keine Daten für \qDance Central\q-Laden gefunden. Der Jugendschutz kann dein Spielerprofil daran gehindert haben, Inhalte herunterzuladen.")
+(store_points
+   "Alle Preisangaben sind in Microsoft® Points")

@@ -1,0 +1,28 @@
+(photo_warning
+   "Le foto verranno eliminate dopo ogni brano.")
+(store_title
+   "Dance Central Store")
+(store_song_filter
+   "Balli")
+(store_avatar_filter
+   "Articoli avatar")
+(store_no_products_for_filter
+   "%s non disponibili.")
+(store_sort_alpha
+   "Ordina per: Nome")
+(store_sort_date
+   "Ordina per: Data")
+(store_sort_cost
+   "Ordina per: Prezzo")
+(store_purchased
+   "Acquistati")
+(store_enumeration
+   "Ricerca in Dance Central Store. Attendi...")
+(store_renumeration
+   "Aggiornamento di Dance Central Store. Attendi...")
+(store_enumeration_error_failed
+   "La tua connessione a Xbox LIVE è stata persa. Per accedere a Dance Central Store, riconnettiti a Xbox LIVE.")
+(store_enumeration_error_no_products
+   "Dati Dance Central Store non trovati. Le impostazioni familiari potrebbero aver bloccato il profilo del giocatore per impedire il download di contenuto scaricabile.")
+(store_points
+   "I prezzi sono espressi in Microsoft® Points")

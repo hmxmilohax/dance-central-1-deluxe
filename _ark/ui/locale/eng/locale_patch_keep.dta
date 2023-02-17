@@ -1,0 +1,28 @@
+(photo_warning
+   "Photos are discarded after each song.")
+(store_title
+   "Dance Central Store")
+(store_song_filter
+   "Dances")
+(store_avatar_filter
+   "Avatar Items")
+(store_no_products_for_filter
+   "No %s are currently available.")
+(store_sort_alpha
+   "Sorting: Name")
+(store_sort_date
+   "Sorting: Date")
+(store_sort_cost
+   "Sorting: Cost")
+(store_purchased
+   "Purchased")
+(store_enumeration
+   "Please wait while Dance Central Store content is found...")
+(store_renumeration
+   "Please wait while Dance Central Store content is refreshed...")
+(store_enumeration_error_failed
+   "You have lost connection to Xbox LIVE. You will be unable to access the Dance Central Store until you reconnect to Xbox LIVE and sign in again.")
+(store_enumeration_error_no_products
+   "No Dance Central Store data found. Family Settings may have blocked this gamer profile from downloading downloadable content.")
+(store_points
+   "All prices are in Microsoft® Points")
