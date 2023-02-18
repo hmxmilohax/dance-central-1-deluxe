@@ -1,8 +1,14 @@
+set FAILED_ARK_BUILD=0
 git pull https://github.com/hmxmilohax/dance-central-1-deluxe main
-@echo OFF
-echo:Building Dance Central Deluxe patch arks.
-"%~dp0dependencies/arkhelper" dir2ark "%~dp0\_ark" "%~dp0\_build\gen" -n "patch_xbox" -e -v6 >nul
-echo:Wrote Dance Central Deluxe patch arks.
-echo:Complete. Launching Xenia. Enjoy Dance Central Deluxe
-"%~dp0\_xenia\xenia_canary" "%~dp0\_build\default_xenia.xex"
-pause
+@echo off
+echo:
+echo:Building Xbox ARK
+"%~dp0dependencies/arkhelper" dir2ark "%~dp0_ark" "%~dp0_build\gen" -n "patch_xbox" -e -v 6 >nul
+if %errorlevel% neq 0 (set FAILED_ARK_BUILD=1)
+echo:
+if %FAILED_ARK_BUILD% neq 1 (echo:Successfully built Dance Central Deluxe ARK.)
+if %FAILED_ARK_BUILD% neq 1 (echo:)
+if %FAILED_ARK_BUILD% neq 0 (echo:Error building ARK. Check your modifications or run _git_reset.bat to rebase your repo.)
+if %FAILED_ARK_BUILD% neq 1 (echo:Launching Xenia &"%~dp0\_xenia\xenia_canary" "%~dp0\_build\default_xenia.xex")
+echo:
+if %FAILED_ARK_BUILD% neq 0 (pause)
