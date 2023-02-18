@@ -38,9 +38,6 @@
 #include beat_game/beat_game.dta
 #include weight_input/weight_input.dta
 #include tutorial/tutorial.dta
-#ifdef HX_XBOX
-#include store/store.dta
-#endif
 {platform_mgr set_notify_ui_location kOSNotifyBottomCenter}
 {set $saveload_skip_upload FALSE}
 #endif

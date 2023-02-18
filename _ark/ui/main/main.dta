@@ -184,14 +184,16 @@
          (options
             {ui goto_screen options_screen})
          (store_title
-            #ifdef HX_XBOX
-            {if_else
-               {platform_mgr is_user_signed_into_live $user}
-               {ui goto_screen store_enum_screen}
-               {do
-                  {show_offers_need_to_sign_in_screen set signing_in_user $user}
-                  {ui goto_screen show_offers_need_to_sign_in_screen}}}
-            #endif)
+            {ui goto_screen options_screen}
+         ;   #ifdef HX_XBOX
+         ;   {if_else
+         ;      {platform_mgr is_user_signed_into_live $user}
+         ;      {ui goto_screen store_enum_screen}
+         ;      {do
+         ;         {show_offers_need_to_sign_in_screen set signing_in_user $user}
+         ;         {ui goto_screen show_offers_need_to_sign_in_screen}}}
+         ;   #endif
+         )
          (natal_troubleshooter
             {gesture_mgr show_gesture_troubleshooter})})
    (on_enter

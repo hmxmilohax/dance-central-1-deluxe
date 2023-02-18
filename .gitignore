@@ -26,3 +26,8 @@ _build/gen/patch_xbox_0.ark
 _xenia/xenia.log
 _build/patch_xbox.hdr
 _build/patch_xbox_0.ark
+_build/gen/main_xbox_7.ark
+_xenia/content/545607D3/00000001/globaloptions/globaloptions
+_xenia/content/545607D3/00000001/savegame/save.dat
+_xenia/content/545607D3/Headers/00000001/globaloptions.header
+_xenia/content/545607D3/Headers/00000001/savegame.header
