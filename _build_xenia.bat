@@ -3,7 +3,7 @@ git pull https://github.com/hmxmilohax/dance-central-1-deluxe main
 @echo off
 echo:
 echo:Building Xbox ARK
-"%~dp0dependencies/arkhelper" dir2ark "%~dp0_ark" "%~dp0_build\gen" -n "patch_xbox" -e -v 5 >nul
+"%~dp0dependencies/arkhelper" dir2ark "%~dp0_ark" "%~dp0_build\gen" -n "patch_xbox" -e -v 6 >nul
 if %errorlevel% neq 0 (set FAILED_ARK_BUILD=1)
 echo:
 if %FAILED_ARK_BUILD% neq 1 (echo:Successfully built Dance Central Deluxe ARK.)
