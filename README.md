@@ -1,4 +1,4 @@
-# Welcome to the repo for Dance Central Deluxe!
+# Dance-Central-Deluxe
 
 ![Header Image](dependencies/header.png)
 
