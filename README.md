@@ -41,6 +41,10 @@ Also make sure to disable any enabled updates for Dance Central in Aurora. Dance
 
 Run the build script again to pull any new updates committed to the repo and rebuild a new ark.
 
+## Songs
+
+You can find DLC packs compatible with all Dance Central titles in the [Drive](https://drive.google.com/drive/folders/1Wc_oYoY8I-HL8XYOlau5qi99CQkPoStl).
+
 ## Included Dependencies
 
 [Git for Windows](https://gitforwindows.org/) - CLI application to allow auto updating DCDX repo files
