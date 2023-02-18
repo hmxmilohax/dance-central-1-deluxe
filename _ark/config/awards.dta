@@ -1,0 +1,27 @@
+(award_medley1
+   (awards
+      (asset medley1)))
+(award_medley2
+   (awards
+      (asset medley2)))
+(award_medley3
+   (awards
+      (asset medley3)))
+(award_medley4
+   (awards
+      (asset medley4)))
+(award_medley5
+   (awards
+      (asset medley5)))
+(award_medley6
+   (awards
+      (asset medley6)))
+(award_medley7
+   (awards
+      (asset medley7)))
+(award_medley_final
+   (awards
+      (asset final_medley)))
+(award_mansion_venue
+   (awards
+      (asset mansion)))
