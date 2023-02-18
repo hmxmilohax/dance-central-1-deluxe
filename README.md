@@ -7,7 +7,9 @@
 This Repo contains everything you need to build an ark for Dance Central Deluxe for Xbox 360.
 
 ## Features
-* Miss Aubrey
+
+### Quality of Life
+* All difficulties, venues, and character outfits unlocked by default
 
 ## Install
 
