@@ -31,3 +31,4 @@ _xenia/content/545607D3/00000001/globaloptions/globaloptions
 _xenia/content/545607D3/00000001/savegame/save.dat
 _xenia/content/545607D3/Headers/00000001/globaloptions.header
 _xenia/content/545607D3/Headers/00000001/savegame.header
+*.pyc
