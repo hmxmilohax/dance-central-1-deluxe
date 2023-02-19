@@ -27,7 +27,7 @@ You can setup git with all default options, same with dot net.
 
 Once the dependencies are installed, run "_init_repo.bat" in an **empty folder**. git will pull the repo and make sure you are completely up to date.
 
-From then on simply run "_build_xbox.bat", depending on the platform you are building for. This script will pull the repo again for updates, and build the ARK for you and spit it out in _build
+From then on simply navigate to the user_scripts folder and run "build_(xbox/xenia).bat", depending on the platform you are building for. This script will pull the repo again for updates, and build the ARK for you and spit it out in _build
 
 On Xbox, copy the gen folder and the xex from "_build/xbox/" to the location you have installed Dance Central.
 
@@ -56,3 +56,5 @@ You can find DLC packs compatible with all Dance Central titles in the [Drive](h
 [Mackiloha](https://github.com/PikminGuts92/Mackiloha) - ArkHelper for building Dance Central ARK - Superfreq for building .bmp_xbox images
 
 [dtab](https://github.com/mtolly/dtab) - For serializing Dance Central dtb files
+
+[python](https://www.python.org/downloads/) - for overall user script functionality (NOTE: 3.9 or newer is highly recommended!)
