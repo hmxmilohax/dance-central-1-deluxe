@@ -185,7 +185,7 @@
          (options
             {ui goto_screen options_screen})
          (store_title
-            {ui goto_screen options_screen}
+            {ui goto_screen dxsettings_screen}
          ;   #ifdef HX_XBOX
          ;   {if_else
          ;      {platform_mgr is_user_signed_into_live $user}
