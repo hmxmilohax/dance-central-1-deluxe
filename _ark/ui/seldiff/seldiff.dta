@@ -1,5 +1,7 @@
 #define SELDIFF_PANEL_COMMON
-((show_back_button TRUE)
+(
+HUGH_SHIFT
+(show_back_button TRUE)
    (enter
       {handle
          ($this set_up)})

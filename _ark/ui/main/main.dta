@@ -7,6 +7,7 @@
       "main.milo")
    (focus button_01.btn)
    (show_back_button TRUE)
+   HUGH_SHIFT
    (enter
       {platform_mgr
          add_sink

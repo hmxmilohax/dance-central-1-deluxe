@@ -1,0 +1,75 @@
+#define MATHS
+(
+   {if {>= $hueshift_r 0.35} {set $huemath_r '-'}}
+   {if {<= $hueshift_r 0.01} {set $huemath_r '+'}}
+   {if {>= $hueshift_g 0.35} {set $huemath_g '-'}}
+   {if {<= $hueshift_g 0.01} {set $huemath_g '+'}}
+   {if {>= $hueshift_b 0.35} {set $huemath_b '-'}}
+   {if {<= $hueshift_b 0.01} {set $huemath_b '+'}}
+)
+#define HUGH_SHIFT
+(
+   (apply_hugh_shift
+      {set $hueshift_r {$huemath_r $hueshift_r {'/' {random_int 0 100} 10000}}}
+      {set $hueshift_g {$huemath_g $hueshift_g {'/' {random_int 0 100} 10000}}}
+      {set $hueshift_b {$huemath_b $hueshift_b {'/' {random_int 0 100} 10000}}}
+      {$this iterate Mat $l {$l set color {pack_color $hueshift_r $hueshift_g $hueshift_b}}} ;actually applying the hue shift after we run the math in the below script task
+   )
+)
+{new
+   UIPanel
+   background_panel
+   (file
+      "background.milo")
+   (enter
+      ;{mgcolors.tex set_bitmap "ui/background/mgcolors.png"}
+      ;{bg01_anim.tex set_bitmap "ui/background/mgcolors.png"}
+      {$this iterate Mat $m {$m set use_environ TRUE}} ;allow the materials to be affected by the environment color
+      {$this iterate Mat $m {$m set color_adjust TRUE}} ;allow the materials to be affected by the environment color
+      {set $huereached_r {random_int 0 2}} ;randomly decide whether to add or subtract in the hugh_shift task
+      {set $huereached_g {random_int 0 2}} ;randomly decide whether to add or subtract in the hugh_shift task
+      {set $huereached_b {random_int 0 2}} ;randomly decide whether to add or subtract in the hugh_shift task
+      {if_else $huereached_r ;check what we got
+         {set $huemath_r '-'} ;set hue shift to subtract
+         {set $huemath_r '+'} ;set hue shift to add
+      }
+      {if_else $huereached_g ;check what we got
+         {set $huemath_g '-'} ;set hue shift to subtract
+         {set $huemath_g '+'} ;set hue shift to add
+      }
+      {if_else $huereached_b ;check what we got
+         {set $huemath_b '-'} ;set hue shift to subtract
+         {set $huemath_b '+'} ;set hue shift to add
+      }
+      {set $hueshift_r {'/' {random_int 0 100} 100}}
+      {set $hueshift_g {'/' {random_int 0 100} 100}}
+      {set $hueshift_b {'/' {random_int 0 100} 100}}
+      MATHS
+      {if {exists hugh_shift} ;check if the hue task is already running
+         {delete hugh_shift} ;delete it if it is running
+      }
+      {$this hugh_shift} ;run the hue shift task
+   )
+   HUGH_SHIFT
+   (hugh_shift
+      {thread_task
+            kTaskSeconds
+            (name hugh_shift) ;name the task so we can delete it later
+            (script
+               MATHS
+               ;{if {== {ui current_screen} background_screen} {background_panel apply_hugh_shift}} ;run the hue shift in it's own block above
+               {if {== {ui current_screen} main_screen} {main_panel apply_hugh_shift}} ;run the hue shift in it's own block above
+               ;{if {== {ui current_screen} seldiff_screen} {seldiff_panel apply_hugh_shift}} ;run the hue shift in it's own block above
+               ;{if {== {ui current_screen} seldiff_practice_screen} {seldiff_practice_panel apply_hugh_shift}} ;run the hue shift in it's own block above
+               ;{if {== {ui current_screen} seldiff_multiplayer_screen} {seldiff_multiplayer_panel apply_hugh_shift}} ;run the hue shift in it's own block above
+               ;{if {== {ui current_screen} startgame_screen} {startgame_panel apply_hugh_shift}} ;run the hue shift in it's own block above
+               ;{if {== {ui current_screen} startgame_practice_screen} {startgame_practice_panel apply_hugh_shift}} ;run the hue shift in it's own block above
+               ;{if {== {ui current_screen} startgame_multiplayer_screen} {startgame_multiplayer_panel apply_hugh_shift}} ;run the hue shift in it's own block above
+               {if {== {ui current_screen} song_select_screen} {song_select_panel apply_hugh_shift}} ;run the hue shift in it's own block above
+               {if {== {ui current_screen} title_screen} {title_panel apply_hugh_shift}} ;run the hue shift in it's own block above
+               {$task sleep .1} ;wait for a lil bit
+               {$task loop} ;loop this script
+            )
+      }
+   )
+}
