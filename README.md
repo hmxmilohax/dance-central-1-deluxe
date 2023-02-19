@@ -24,6 +24,7 @@ This Repo contains everything you need to build an ARK for Dance Central Deluxe 
 
 ### Quality of Life
 * All difficulties, venues, and character outfits unlocked by default
+* New menu, `Deluxe Settings`, in game for additional modifications
 
 ### Additional Modifications
 * Hue-shifting menu
