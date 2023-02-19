@@ -6,6 +6,7 @@
    (show_hand_help FALSE)
    HUGH_SHIFT
    (enter
+      {logo.tex set_bitmap "ui/title/logo_keep.png"}
       {meta music_start}
       {user_mgr clear_slot 0}
       {depth_buffer set_state kDepthBuffer_Tutorial})
