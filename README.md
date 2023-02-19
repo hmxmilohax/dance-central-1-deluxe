@@ -9,10 +9,10 @@
   - [Features](#features)
     - [Quality of Life](#quality-of-life)
   - [Setup](#setup)
-    - [Repo-Setup](#repo-setup)
+    - [Repo Setup](#repo-setup)
   - [Install](#install)
-    - [Xenia-Emulator](#xenia-emulator)
     - [Xbox](#xbox)
+    - [Xenia Emulator](#xenia-emulator)
   - [DLC](#dlc)
   - [Dependencies](#dependencies)
 
@@ -29,7 +29,7 @@ This Repo contains everything you need to build an ark for Dance Central Deluxe 
 
 NOTE: You WILL need a modded/hacked console to play this mod on console. I hope this is clear
 
-### Repo-Setup
+### Repo Setup
 Setting up the Dance Central Deluxe repo for the first time is meant to be as easy as possible.
 As well, it is designed to allow you to automatically receive updates as the repo is updated.
 
@@ -48,33 +48,31 @@ From then on simply run the build .py corresponding to the platform you are buil
 
 ## Install
 
-### Xenia-Emulator
+### Xbox
+
+**NOTE: You WILL need a modded/hacked console to play this mod on console. I hope this is clear**
+
+On Xbox, copy the `gen` folder and the xex from `_build/` to the same location your base copy of Dance Central lives.
+
+If installing for the first time, make sure you rename the vanilla `default.xex` to `default_vanilla.xex` for safety.
+
+Make sure you clear your system cache. Do this by navigating to `System Settings>Storage` and press Y to clear the system cache.
+
+Also make sure to `disable` any enabled updates for Dance Central in Aurora. Dance Central Deluxe rolls `TU2` into its base installation.
+
+Run the build script again to pull any new updates committed to the repo and rebuild a new ark/hdr.
+
+### Xenia Emulator
 
 To install on Xenia, copy your vanilla Xbox 360 1.0 arks to `\_build\gen`
 
 then just navigate to `user_scripts` and run `build_xenia.py` to automatically build and run Dance Central Deluxe.
 
-### Xbox
-
-**NOTE: You WILL need a modded/hacked console to play this mod on console. I hope this is clear**
-
-On Xbox, copy the gen folder and the xex from `_build/` to the same location your base copy of Dance Central lives.
-
-If installing for the first time, make sure you rename the vanilla `default.xex` to `default_vanilla.xex` for safety.
-
-Make sure you clear your system cache.
-
-To clear system cache, navigate to `System Settings>Storage` and press Y to clear the system cache.
-
-Also make sure to `disable` any enabled updates for Dance Central in Aurora. Dance Central Deluxe rolls TU2 into its base installation.
-
-Run the build script again to pull any new updates committed to the repo and rebuild a new ark/hdr.
-
 ## DLC
 
 You can find DLC packs for all Dance Central titles in [this drive](https://drive.google.com/drive/folders/1Wc_oYoY8I-HL8XYOlau5qi99CQkPoStl).
 
-On Xenia, launch it and go to "File" > "Install Content" and select all the DLC files you want to install. You can select more than one at a time.
+On Xenia, launch it and navigate to `File` > `Install Content` and select all the DLC files you want to install. You can select more than one at a time.
 
 ## Dependencies
 
