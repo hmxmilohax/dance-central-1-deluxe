@@ -74,6 +74,8 @@ Run the build script again to pull any new updates committed to the repo and reb
 
 You can find DLC packs for all Dance Central titles in [this drive](https://drive.google.com/drive/folders/1Wc_oYoY8I-HL8XYOlau5qi99CQkPoStl).
 
+On Xenia, launch it and go to "File" > "Install Content" and select all the DLC files you want to install. You can select more than one at a time.
+
 ## Dependencies
 
 [Git for Windows](https://gitforwindows.org/) - CLI application to allow auto updating DCDX repo files
