@@ -72,7 +72,7 @@ Run the build script again to pull any new updates committed to the repo and reb
 
 ## DLC
 
-You can find DLC packs compatible with all Dance Central titles in the [Drive](https://drive.google.com/drive/folders/1Wc_oYoY8I-HL8XYOlau5qi99CQkPoStl).
+You can find DLC packs compatible with all Dance Central titles in [this drive](https://drive.google.com/drive/folders/1Wc_oYoY8I-HL8XYOlau5qi99CQkPoStl).
 
 ## Dependencies
 
