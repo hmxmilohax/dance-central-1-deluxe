@@ -1,9 +1,9 @@
-# Dance-Central-Deluxe
+# Dance Central Deluxe
 
 ![Header Image](dependencies/header.png)
 
 # Table of Contents  
-- [Dance-Central-Deluxe](#dance-central-deluxe)
+- [Dance Central Deluxe](#dance-central-deluxe)
 - [Table of Contents](#table-of-contents)
 - [Introduction](#introduction)
   - [Features](#features)
