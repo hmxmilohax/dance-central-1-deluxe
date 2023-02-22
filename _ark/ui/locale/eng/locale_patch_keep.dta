@@ -28,3 +28,11 @@
    "No Dance Central Store data found. Family Settings may have blocked this gamer profile from downloading downloadable content.")
 (store_points
    "All prices are in Microsoft® Points")
+(ninja01
+   "Ninja")
+(ninja02
+   "Stealth Mode")
+(default_character01
+   "Oblio")
+(default_character02
+   "Oblio")

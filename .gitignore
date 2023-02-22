@@ -18,3 +18,4 @@ _build/gen/main_xbox_7.ark
 _xenia/content
 *.pyc
 _build/gen/main_xbox
+_xenia/recent.toml
