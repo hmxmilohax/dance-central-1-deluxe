@@ -17,3 +17,4 @@ _build/patch_xbox_0.ark
 _build/gen/main_xbox_7.ark
 _xenia/content
 *.pyc
+_build/gen/main_xbox

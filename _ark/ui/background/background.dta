@@ -22,6 +22,8 @@
    (file
       "background.milo")
    (enter
+      {if {file_exists "GAME:/main_background.bik"} {TexMovie.tmov set bink_movie_file "GAME:/main_background.bik"}}
+      {TexMovie.tmov set loop TRUE}
       ;{mgcolors.tex set_bitmap "ui/background/mgcolors.png"}
       ;{bg01_anim.tex set_bitmap "ui/background/mgcolors.png"}
       {$this iterate Mat $m {$m set use_environ TRUE}} ;allow the materials to be affected by the environment color
