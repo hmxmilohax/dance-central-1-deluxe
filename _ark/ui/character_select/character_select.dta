@@ -133,9 +133,14 @@
             {character.mesh
                set
                mat
-               {sprintf
-                  "%s.mat"
-                  $char}}}})
+               {if_else
+               {|| {== $char 'ninja'} {== $char 'oblio03'} }
+                  {sprintf "oblio.mat"}
+                  {sprintf
+                     "%s.mat"
+                  $char}
+               }
+               }}})
    (BUTTON_DOWN_MSG
       {handle_ret
          (right_hand.hbs handle_button_down $action)})
