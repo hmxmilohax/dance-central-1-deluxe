@@ -24,10 +24,9 @@ This Repo contains everything you need to build an ARK for Dance Central Deluxe 
 
 ### Quality of Life
 * Faster start time via scripting
-* All difficulties, venues, and character outfits unlocked by default
+* All difficulties, venues, and characters unlocked by default
 * New menu, `Deluxe Settings`, in game for additional modifications
 * No Kinect check for Xenia
-* Characters from later DC titles
 
 ### Additional Modifications
 * Hue-shifting menu
