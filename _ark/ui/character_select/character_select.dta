@@ -16,6 +16,7 @@
             {set $alreadyaddedchars TRUE}
             {push_back $chars ninja}
             {push_back $chars oblio03}
+            {push_back $chars momrey}
             ;{push_back $chars mo03}
          }
          {foreach_int
@@ -95,7 +96,7 @@
                   {$profile is_content_unlocked $char}
                   {do
                      {meta_performer set_character_pref $char}
-                     {unless {|| {== $char ninja} {== $char oblio03} {== $char mo03}} {$profile mark_content_not_new $char}}
+                     {unless {|| {== $char momrey} {== $char ninja} {== $char oblio03} {== $char mo03}} {$profile mark_content_not_new $char}}
                      {ui goto_screen character_outfit_select_screen}}
                   {do
                      {shell_input skip_current_select_anim}
@@ -136,9 +137,12 @@
                {if_else
                {|| {== $char 'ninja'} {== $char 'oblio03'} }
                   {sprintf "oblio.mat"}
+                  {if_else
+                  {== $char 'momrey'}
+                     {sprintf "aubrey.mat"}
                   {sprintf
                      "%s.mat"
-                  $char}
+                  $char}}
                }
                }}})
    (BUTTON_DOWN_MSG
