@@ -137,6 +137,11 @@ Download a DLC pack of your choice and open Xenia. Navigate to `File > Install C
 * You don't have all the required dependencies installed.
     * Head back to [Repo Setup](#repo-setup) and make sure you followed the directions properly.
 
+## Xbox 360 Troubleshooting
+
+### ***The game doesn't get past the splash screens!***
+* Make sure you copy the **ENTIRE** contents of `\_build\` to where your vanilla copy of Dance Central lives.
+
 ## Xenia Troubleshooting
 
 ### ***My game opens to a black screen!***
@@ -156,11 +161,9 @@ Download a DLC pack of your choice and open Xenia. Navigate to `File > Install C
 
 ### ***The framerate is awful (below 60)!***
 * Your PC is most likely not capable of running Xenia and we haven't found any settings to help optimize it.
-* 
-## Xbox 360 Troubleshooting
 
-### ***The game doesn't get past the splash screens!***
-* Make sure you copy the **ENTIRE** contents of `\_build\` to where your vanilla copy of Dance Central lives.
+### ***How do I use my Kinect?***
+* Play on hardware.
 
 # Dependencies
 
