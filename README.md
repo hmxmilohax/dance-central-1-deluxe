@@ -21,7 +21,7 @@ This repo contains everything you need to build Dance Central Deluxe for Xbox 36
 - [Installing](#installing)
   - [Xbox 360 Hardware](#xbox-360-hardware)
   - [Xenia Emulator](#xenia-emulator) (DEV/TESTING ONLY)
-- [DLC](#songs)
+- [DLC](#dlc)
   - [Installing DLC on Xenia](#installing-dlc-on-xenia)
 - [Troubleshooting](#troubleshooting)
   - [Repo Troubleshooting](#repo-troubleshooting)
