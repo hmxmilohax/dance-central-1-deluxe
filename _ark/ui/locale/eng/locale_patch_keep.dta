@@ -4,6 +4,22 @@
    "Photos are discarded after each song.")
 (store_title
    "Deluxe Settings")
+(os_dxsettings
+   "Deluxe Settings")
+(os_set1_0
+   "Disable Post FX: OFF")
+(os_set1_1
+   "Disable Post FX: ON")
+(os_set2
+   "Hi there!")
+(os_set3
+   "Thanks for playing!")
+(os_set4
+   "More is coming soon,")
+(os_set5
+   "so stay tuned!")
+(os_set6
+   "- Luna on behalf of MiloHax <3")
 (store_song_filter
    "Dances")
 (store_avatar_filter

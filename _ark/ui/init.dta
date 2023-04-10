@@ -45,3 +45,6 @@
 {platform_mgr set_notify_ui_location kOSNotifyBottomCenter}
 {set $saveload_skip_upload FALSE}
 #endif
+
+; modifier states
+{set $postfx FALSE}
