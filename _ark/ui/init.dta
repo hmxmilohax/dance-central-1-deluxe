@@ -1,3 +1,40 @@
+;Disable Post FX
+{set $postfx FALSE}
+
+;No Kinect Check (first, xenia / second, hardware)
+#ifdef XENIA_SUCKS
+{set $wedidthis TRUE}
+#else
+{set $wedidthis FALSE}
+#endif
+
+;DEVELOPER SETTINGS BELOW, DO NOT MODIFY UNLESS YOU KNOW WHAT YOU'RE DOING!!
+
+#define INIT_DTA_READER
+(
+   {foreach $entry {read_file "GAME:/dx.dta"}
+      {if {== {elem $entry 0} {basename disable_post_fx}}
+         {set $postfx
+            {elem {find $entry disable_post_fx} 1}
+         }
+      }
+      {if {== {elem $entry 0} {basename no_kinect_check}}
+         {set $wedidthis
+            {elem {find $entry no_kinect_check} 1}
+         }
+      }
+   }
+)
+;{unless {file_exists dx.dta} INIT_DTA_WRITER}
+{if {file_exists "GAME:/dx.dta"} INIT_DTA_READER}
+
+;modifier funcs
+{if $postfx
+   {rnd toggle_all_postprocs}}
+{if $wedidthis
+   {gesture_mgr toggle_pause_on_skeleton_loss}}
+   
+
 #ifdef UI_INIT_DTA
 #else
 #define UI_INIT_DTA
@@ -45,6 +82,3 @@
 {platform_mgr set_notify_ui_location kOSNotifyBottomCenter}
 {set $saveload_skip_upload FALSE}
 #endif
-
-; modifier states
-{set $postfx FALSE}

@@ -22,12 +22,12 @@
    (panels game_panel world_panel)
    (disable_screen_saver TRUE)
    (enter
-      #ifdef XENIA_SUCKS
-      {if {! $wedidthis}
-         {set $wedidthis TRUE}
-         {gesture_mgr toggle_pause_on_skeleton_loss}
-      }
-      #endif
+   ;   #ifdef XENIA_SUCKS
+   ;   {if {! $wedidthis}
+   ;      {set $wedidthis TRUE}
+   ;      {gesture_mgr toggle_pause_on_skeleton_loss}
+   ;   }
+   ;   #endif
       {$this set_showing TRUE}
       {rnd set_in_game TRUE}
       {platform_mgr

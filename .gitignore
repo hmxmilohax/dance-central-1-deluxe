@@ -25,3 +25,4 @@ _xenia/xinput9_1_0.dll
 *.pyc
 _build/gen/main_xbox
 _xenia/recent.toml
+dx.dta

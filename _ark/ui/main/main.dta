@@ -1,3 +1,18 @@
+#define INIT_DTA_WRITER
+(
+   {write_file "GAME:/dx.dta"
+      {array
+        (
+            (disable_post_fx
+               (disable_post_fx $postfx)
+            )
+            (no_kinect_check
+               (no_kinect_check $wedidthis)
+            )
+         )
+      }
+   }
+)
 {new
    HamPanel
    main_panel

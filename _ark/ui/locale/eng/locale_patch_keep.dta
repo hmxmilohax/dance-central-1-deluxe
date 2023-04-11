@@ -6,18 +6,24 @@
    "Deluxe Settings")
 (os_dxsettings
    "Deluxe Settings")
-(os_set1_0
+(os_writesettings
+   "[Save Settings]")
+(dx_writesettings_msg
+   "Successfully saved Deluxe Settings to dx.dta")
+(dx_write_conf
+   "Okay")
+(os_postfx_0
    "Disable Post FX: OFF")
-(os_set1_1
+(os_postfx_1
    "Disable Post FX: ON")
-(os_set2
-   "Hi there!")
-(os_set3
-   "Thanks for playing!")
+(os_nokinectcheck_0
+   "No Kinect Check: OFF")
+(os_nokinectcheck_1
+   "No Kinect Check: ON")
 (os_set4
-   "More is coming soon,")
+   "Hey, thanks for playing!")
 (os_set5
-   "so stay tuned!")
+   "Stay tuned for more!")
 (os_set6
    "- Luna on behalf of MiloHax <3")
 (store_song_filter

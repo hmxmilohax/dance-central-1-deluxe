@@ -25,11 +25,19 @@
             {$this disable autosave.btn}
             {autosave_check.lbl set_showing FALSE}
             {shell_input update_button_zones}}}
+      {calibration.btn set text_token {localize os_writesettings}}
       {if_else $postfx ; localize depending on state of modifier, similar to gdrbdx
-         {calibration.btn set text_token {localize os_set1_1}}
-         {calibration.btn set text_token {localize os_set1_0}}}
-      {natal_troubleshooter.btn set text_token {localize os_set2}}
-      {av_settings.btn set text_token {localize os_set3}}
+         {natal_troubleshooter.btn set text_token {localize os_postfx_1}}
+         {natal_troubleshooter.btn set text_token {localize os_postfx_0}}}
+      {if_else $wedidthis
+         {av_settings.btn set text_token {localize os_nokinectcheck_1}}
+         {av_settings.btn set text_token {localize os_nokinectcheck_0}}}
+      {$this disable autosave.btn} ;hide unused btns (for now)
+      {autosave.btn set_showing FALSE}
+      {$this disable tutorials.btn}
+      {tutorials.btn set_showing FALSE}
+      {$this disable movies.btn}
+      {movies.btn set_showing FALSE} ;end unused btns
       {autosave.btn set text_token {localize os_set4}}
       {tutorials.btn set text_token {localize os_set5}}
       {movies.btn set text_token {localize os_set6}})
@@ -39,15 +47,18 @@
       {switch
          $component
          (calibration.btn
+            {do INIT_DTA_WRITER}
+      ;      {ui goto_screen dx_writesettings_screen}
+         )
+         (natal_troubleshooter.btn
             {set $postfx {! $postfx}}
             {rnd toggle_all_postprocs}
             {$this lst_reset}
          )
-         (natal_troubleshooter.btn
-      ;      {rnd toggle_all_postprocs}
-         )
          (av_settings.btn
-      ;      {rnd toggle_all_postprocs}
+            {set $wedidthis {! $wedidthis}}
+            {gesture_mgr toggle_pause_on_skeleton_loss}
+            {$this lst_reset}
          )
          (autosave.btn
       ;      {rnd toggle_all_postprocs}
@@ -56,7 +67,7 @@
       ;      {rnd toggle_all_postprocs}
          )
          (movies.btn
-      ;      {rnd toggle_all_postprocs}
+      ;      {rnd toggle_all_postprocs}      
          )
          (back.btn
             {ui
@@ -85,3 +96,18 @@
    (panels meta background_panel dxsettings_panel)
    (focus dxsettings_panel)
    (back main_screen)}
+{new
+   HamScreen
+   dx_writesettings_screen
+   (panels meta background_panel dialog_panel)
+   (focus dialog_panel)
+   (enter
+      {$this disable opt2.btn}
+      {opt2.btn set_showing FALSE}
+      {opt1.btn set text_token {localize dx_write_conf}}
+      {dialog_panel set_yesno dx_writesettings_msg})
+   (SELECT_MSG
+      {switch
+         $component
+         (opt1.btn
+            {ui goto_screen dxsettings_screen})})}
