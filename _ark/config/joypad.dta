@@ -1,0 +1,4 @@
+(ignore)
+(hold_ms 300)
+(repeat_ms 50)
+(keepalive_ms 2147483647)
