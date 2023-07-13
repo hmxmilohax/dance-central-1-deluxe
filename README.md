@@ -1,12 +1,12 @@
-# Dance Central Deluxe
+# Dance Central 1 Deluxe
 
 ![Header Image](dependencies/header.png)
 
 # Introduction
 
-### Dance Central Deluxe is a Quality-of-Life Improvement Mod by [MiloHax](https://github.com/hmxmilohax)
+### Dance Central 1 Deluxe is a Quality-of-Life Improvement Mod by [MiloHax](https://github.com/hmxmilohax)
 
-This repo contains everything you need to build Dance Central Deluxe for Xbox 360.
+This repo contains everything you need to build Dance Central 1 Deluxe for Xbox 360.
 
 # Table of Contents  
 - [Dance Central Deluxe](#dance-central-deluxe)
