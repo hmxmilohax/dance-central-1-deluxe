@@ -28,9 +28,9 @@ def build_patch_ark(xbox: bool):
     root_dir = cwd.parents[0] # root directory of the repo
 
     if platform == "win32":
-        build_location = "_build\gen" if not xbox else "_build\\xbox\gen"
+        build_location = "_build\gen" if not xbox else "_build\gen"
     else:
-        build_location = "_build/gen" if not xbox else "_build/xbox/gen"
+        build_location = "_build/gen" if not xbox else "_build/gen"
         make_executable_binaries()
 
     # pull the latest changes from the RB3DX repo if necessary

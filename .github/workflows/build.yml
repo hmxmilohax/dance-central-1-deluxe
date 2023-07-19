@@ -19,6 +19,9 @@ jobs:
         run: |
           find . -name "*.txt" -type f -delete
           find . -name "*.zbm" -type f -delete
+          find . -name "*.be" -type f -delete
+          find . -name "*.xmplr" -type f -delete
+          find . -name "default_xenia.xex" -type f -delete
       
       - name: Upload result
         uses: actions/upload-artifact@v2
