@@ -16,7 +16,7 @@
             {set $alreadyaddedchars TRUE}
             {push_back $chars ninja}
             {push_back $chars oblio03}
-            {push_back $chars momrey}
+            ;{push_back $chars momrey}
             ;{push_back $chars mo03}
          }
          {foreach_int
