@@ -9,14 +9,12 @@
 )
 #define HUGH_SHIFT
 (
-	{if {file_exists "GAME:/main_background.bik"}
-	   (apply_hugh_shift
-	      {set $hueshift_r {$huemath_r $hueshift_r {'/' {random_int 0 100} 10000}}}
-	      {set $hueshift_g {$huemath_g $hueshift_g {'/' {random_int 0 100} 10000}}}
-	      {set $hueshift_b {$huemath_b $hueshift_b {'/' {random_int 0 100} 10000}}}
-	      {$this iterate Mat $l {$l set color {pack_color $hueshift_r $hueshift_g $hueshift_b}}} ;actually applying the hue shift after we run the math in the below script task
-	   )
-	}
+   (apply_hugh_shift
+      {set $hueshift_r {$huemath_r $hueshift_r {'/' {random_int 0 100} 10000}}}
+      {set $hueshift_g {$huemath_g $hueshift_g {'/' {random_int 0 100} 10000}}}
+      {set $hueshift_b {$huemath_b $hueshift_b {'/' {random_int 0 100} 10000}}}
+      {$this iterate Mat $l {$l set color {pack_color $hueshift_r $hueshift_g $hueshift_b}}} ;actually applying the hue shift after we run the math in the below script task
+   )
 )
 {new
    UIPanel
